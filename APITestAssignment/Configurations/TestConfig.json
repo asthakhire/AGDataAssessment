@@ -1,0 +1,8 @@
+{
+  "TestConfig": [
+    {
+      "TestUri": "https://jsonplaceholder.typicode.com/"
+    }
+
+  ]
+}

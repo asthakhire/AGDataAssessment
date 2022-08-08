@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APITestAssignment", "APITestAssignment\APITestAssignment.csproj", "{F42335AC-D7C7-4390-A36D-014912583958}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestAssignment", "UITestAssignment\UITestAssignment.csproj", "{150F5EF1-0485-4C24-B4FA-7915945DFA85}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F42335AC-D7C7-4390-A36D-014912583958}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F42335AC-D7C7-4390-A36D-014912583958}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F42335AC-D7C7-4390-A36D-014912583958}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F42335AC-D7C7-4390-A36D-014912583958}.Release|Any CPU.Build.0 = Release|Any CPU
+		{150F5EF1-0485-4C24-B4FA-7915945DFA85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{150F5EF1-0485-4C24-B4FA-7915945DFA85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{150F5EF1-0485-4C24-B4FA-7915945DFA85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{150F5EF1-0485-4C24-B4FA-7915945DFA85}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CBE0E08B-41B7-47A7-BA13-CCD2C560E9F4}
+	EndGlobalSection
+EndGlobal
