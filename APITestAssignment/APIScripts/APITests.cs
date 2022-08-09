@@ -21,6 +21,7 @@ namespace APITestAssignment.APIScripts
             PostServices postSvc= new PostServices();
             try
             {
+                report.StartTest("AGData", "GetAllPosts");
                 report.LogInfo("Get all the Posts");
                 var result = await postSvc.GetAllPosts(HttpStatusCode.OK);
                 Assert.AreEqual(result.Count, 100);
@@ -46,6 +47,7 @@ namespace APITestAssignment.APIScripts
             
             try
             {
+                report.StartTest("AGData", "VerifySavePost");
                 report.LogInfo("Create a new Post");
                 var resultSave = await postSvc.SavePost(post, HttpStatusCode.Created);
             }
@@ -64,6 +66,7 @@ namespace APITestAssignment.APIScripts
             
             try
             {
+                report.StartTest("AGData", "VerifyUpdatePost");
                 Post result = await postSvc.GetPost("1", HttpStatusCode.OK);
                 report.LogInfo("Update an existing post");
                 result.Body = "Test Post Body - Updated";
@@ -83,6 +86,7 @@ namespace APITestAssignment.APIScripts
             PostServices postSvc = new PostServices();
             try
             {
+                report.StartTest("AGData", "VerifyDeletePost");
                 report.LogInfo("Delete an existing Post");
                 var deletePost = await postSvc.DeletePost("1", HttpStatusCode.OK);
 
@@ -109,6 +113,7 @@ namespace APITestAssignment.APIScripts
             };
             try
             {
+                report.StartTest("AGData", "SavePostComments");
                 report.LogInfo("Create a Post comment");
                 var resultSave = await postSvc.SavePostComment(comments, HttpStatusCode.Created);
             }
@@ -126,6 +131,7 @@ namespace APITestAssignment.APIScripts
             PostServices postSvc = new PostServices();
             try
             {
+                report.StartTest("AGData", "GetCommentsForPost");
                 report.LogInfo("Get comment for a Post");
                 var resultComments = await postSvc.GetAllPostsComments(1,HttpStatusCode.OK);
                 Assert.AreEqual(resultComments.Count, 5);

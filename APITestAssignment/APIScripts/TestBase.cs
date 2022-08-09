@@ -3,6 +3,7 @@ using APITestAssignment.Reporting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text;
 
 namespace APITestAssignment.APIScripts
@@ -14,9 +15,16 @@ namespace APITestAssignment.APIScripts
         public TestContext TestContext { get; set; }
         public static string TestUri { get; set; }
 
+        [AssemblyInitialize]
+        public static void AssemblySetup(TestContext _context)
+        {
+            report = new HtmlReport(Directory.GetCurrentDirectory());
+        }
+
         [TestInitialize]
         public void TestSetUp()
         {
+            report.StartReport();
             TestUri = "https://jsonplaceholder.typicode.com";
         }
 
@@ -39,6 +47,7 @@ namespace APITestAssignment.APIScripts
                     Assert.IsTrue(true, "passed");
                     break;
             }
+            report.EndReport();
         }
 
         public void ReportError(Exception e)
