@@ -42,14 +42,17 @@ namespace APITestAssignment.Reporting
             _extent = new ExtentReports();
             _extent.AttachReporter(htmlReporter);
             return reportPath;
-
-
         }
         public string StartReport()
         {
             CreateReportFolder();
             string reportPath = CreateReportFile(ReportFolderLocation);
             return reportPath;
+        }
+
+        public void StartTest(string testCaseId, string testCaseTitle)
+        {
+            _test = _extent.CreateTest(testCaseId, testCaseTitle);
         }
 
         public void LogInfo(string logReport)

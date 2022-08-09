@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace UITestAssignment.Data.JSONData
 {
@@ -15,12 +16,12 @@ namespace UITestAssignment.Data.JSONData
 
         public List<Data.JSONData.Environments> GetEnvironmentDetails()
         {
+            string ApplicationFileLocation = Directory.GetCurrentDirectory();
             List<Data.JSONData.Environments> allEnvironments = null;
-
             allEnvironments = JsonHelper
-                .GetObjectData<AppEnvironment>(@"C:\Users\akhire\Source\Repos\AGDataAssessment\UITestAssignment\Data\JSONData\Environments.json").Environments;
+                .GetObjectData<AppEnvironment>(ApplicationFileLocation + "\\Data\\JSONData\\Environments.json").Environments;
             return allEnvironments;
-        }
+        } 
 
         public class AppEnvironment
         {

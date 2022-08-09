@@ -10,9 +10,11 @@ namespace UITestAssignment.PageClasses
     public class HomePage 
     {
         AutomationTool _automationTool;
+        UIOperations uiOperations;
         public HomePage(AutomationTool automationTool)
         {
             _automationTool = automationTool;
+            uiOperations = new UIOperations();
         }
 
         #region Elements
@@ -23,14 +25,14 @@ namespace UITestAssignment.PageClasses
         #endregion
 
         #region PageMethods
-        //public override void WaitForPageToLoad()
-        //{
-        //    //uiOperations.WaitForElementToPresent("//header[@id='masthead']//div/ul[@id='primary-menu']");
-        //}
+        public void WaitForPageToLoad()
+        {
+            uiOperations.WaitForElementToPresent("//header[@id='masthead']//div/ul[@id='primary-menu']",_automationTool.WebDriver);
+        }
 
         public void ClickCompanyCareersTab()
         {
-            //uiOperations.MouseHover(CompanyTab);
+            uiOperations.MouseHover(CompanyTab, _automationTool.WebDriver);
             CareersOption.Click();
         }
         #endregion

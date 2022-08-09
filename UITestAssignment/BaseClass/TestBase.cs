@@ -6,6 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
 using APITestAssignment.Reporting;
 using System;
+using System.IO;
 
 namespace UITestAssignment.BaseClass
 {
@@ -23,6 +24,7 @@ namespace UITestAssignment.BaseClass
         public static void AssemblySetup(TestContext _context)
         {
             ResourceInitialize.Initialize(_context);
+            report = new HtmlReport(Directory.GetCurrentDirectory());
         }
         [AssemblyCleanup]
         public static void TearDown()
@@ -32,6 +34,7 @@ namespace UITestAssignment.BaseClass
         [TestInitialize]
         public void TestSetup()
         {
+            report.StartReport();
             _automationTool = new AutomationTool();
             _automationTool.LaunchAutomationTool(ResourceInitialize.browser);
             var bmNavigationMethods = new NavigationMethods(_automationTool);
@@ -51,6 +54,7 @@ namespace UITestAssignment.BaseClass
         public void TestCleanUp()
         {
             _automationTool.WebDriver.Close();
+            report.EndReport();
         }
 
         public void ReportError(Exception e)

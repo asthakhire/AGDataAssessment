@@ -21,6 +21,7 @@ namespace APITestAssignment.APIScripts
             PostServices postSvc= new PostServices();
             try
             {
+                report.LogInfo("Get all the Posts");
                 var result = await postSvc.GetAllPosts(HttpStatusCode.OK);
                 Assert.AreEqual(result.Count, 100);
             }
@@ -45,7 +46,7 @@ namespace APITestAssignment.APIScripts
             
             try
             {
-                //POST call
+                report.LogInfo("Create a new Post");
                 var resultSave = await postSvc.SavePost(post, HttpStatusCode.Created);
             }
             catch (Exception e)
@@ -64,7 +65,7 @@ namespace APITestAssignment.APIScripts
             try
             {
                 Post result = await postSvc.GetPost("1", HttpStatusCode.OK);
-                //PUT call
+                report.LogInfo("Update an existing post");
                 result.Body = "Test Post Body - Updated";
                 var updatePost = await postSvc.PutPost(result.Id, result, HttpStatusCode.OK);
             }
@@ -82,7 +83,7 @@ namespace APITestAssignment.APIScripts
             PostServices postSvc = new PostServices();
             try
             {
-                //DELETE a post with existing Post ID
+                report.LogInfo("Delete an existing Post");
                 var deletePost = await postSvc.DeletePost("1", HttpStatusCode.OK);
 
             }
@@ -106,10 +107,9 @@ namespace APITestAssignment.APIScripts
                 Email="test@test.com",
                 Body = "quo deleniti praesentium dicta non quod\naut est molestias\nmolestias et officia quis nihil\nitaque dolorem quia"
             };
-
             try
             {
-                //POST call
+                report.LogInfo("Create a Post comment");
                 var resultSave = await postSvc.SavePostComment(comments, HttpStatusCode.Created);
             }
             catch (Exception e)
@@ -124,10 +124,9 @@ namespace APITestAssignment.APIScripts
         public async Task GetCommentsForPost()
         {
             PostServices postSvc = new PostServices();
-
             try
             {
-                //GET call
+                report.LogInfo("Get comment for a Post");
                 var resultComments = await postSvc.GetAllPostsComments(1,HttpStatusCode.OK);
                 Assert.AreEqual(resultComments.Count, 5);
             }

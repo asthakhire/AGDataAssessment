@@ -24,18 +24,23 @@ namespace UITestAssignment.UITestScripts
 			careersPage = new CareersPage(_automationTool);
 			try
 			{
-				PageObjects pageObjects = new PageObjects();
-				
-				//homePage.WaitForPageToLoad();
-				
+				report.StartTest("AGDataTest", "UI Test - Validate Open Position");
+				report.LogInfo("AGData home page loads");
+				homePage.WaitForPageToLoad();
+
+				report.LogInfo("Open the careers page from Company tab");
 				homePage.ClickCompanyCareersTab();
-				//careersPage.WaitForPageToLoad();
+				careersPage.WaitForPageToLoad();
 
 				careersPage.SwitchToFrame();
+
+				report.LogInfo("Get list of all the open positions");
 				List<string> lst = careersPage.GetListOfOpenPositions();
-				//
+
+				report.LogInfo("Open the position of Manager");
 				careersPage.ClickOnPosition(lst.Where(pos => pos.Contains("Customer Support Manager")).FirstOrDefault());
-				//
+
+				report.LogInfo("Verify the selected position is opened");
 				careersPage.VerifyOpenPositionLoaded();
 
 			}

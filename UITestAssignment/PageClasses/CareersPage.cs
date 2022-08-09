@@ -10,9 +10,12 @@ namespace UITestAssignment.PageClasses
     public class CareersPage 
     {
         AutomationTool _automationTool;
+        UIOperations uiOperations;
+
         public CareersPage(AutomationTool automationTool)
         {
             _automationTool = automationTool;
+            uiOperations = new UIOperations();
         }
         #region Elements
         IWebElement PositionFrame => _automationTool.WebDriver.FindElement(By.XPath(""));
@@ -20,10 +23,10 @@ namespace UITestAssignment.PageClasses
 
         #region PageMethods
 
-        //public override void WaitForPageToLoad()
-        //{
-        //    //uiOperations.WaitForElementToPresent("//section[@id='openings']");
-        //}
+        public void WaitForPageToLoad()
+        {
+            uiOperations.WaitForElementToPresent("//section[@id='openings']",_automationTool.WebDriver);
+        }
 
         public List<string> GetListOfOpenPositions()
         {
