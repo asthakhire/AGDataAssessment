@@ -44,11 +44,7 @@
   <!-- Parameters used by tests at runtime -->
   <TestRunParameters>
     <Parameter name="Environment" value="Test" />
-    <Parameter name="ProviderSetup" value="PI" />
     <Parameter name="Browser" value="Chrome" />
-    <Parameter name="SauceLabs" value="False" />
-    <Parameter name="DatabaseName" value="complianceplatform_stage" />
-    <Parameter name="Timezone" value="Mountain" />
   </TestRunParameters>
 
   <!-- Adapter Specific sections -->
