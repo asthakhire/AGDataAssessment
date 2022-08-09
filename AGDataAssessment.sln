@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "APITestAssignment", "APITestAssignment\APITestAssignment.csproj", "{F42335AC-D7C7-4390-A36D-014912583958}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "APITestAssignment", "APITestAssignment\APITestAssignment.csproj", "{F42335AC-D7C7-4390-A36D-014912583958}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UITestAssignment", "UITestAssignment\UITestAssignment.csproj", "{150F5EF1-0485-4C24-B4FA-7915945DFA85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UITestAssignment", "UITestAssignment\UITestAssignment.csproj", "{150F5EF1-0485-4C24-B4FA-7915945DFA85}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

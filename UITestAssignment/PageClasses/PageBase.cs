@@ -8,7 +8,5 @@ namespace UITestAssignment.PageClasses
     public abstract class PageBase
     {
         public abstract void WaitForPageToLoad();
-
-        public static IWebDriver driver;
     }
 }

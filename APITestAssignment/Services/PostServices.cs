@@ -18,7 +18,6 @@ namespace APITestAssignment.Services
             Dictionary<string, object> newPost = new Dictionary<string, object>();
 
             newPost.Add("userId", post.UserId);
-            //newPost.Add("id", post.Id);
             newPost.Add("title", post.Title);
             newPost.Add("body", post.Body);
 

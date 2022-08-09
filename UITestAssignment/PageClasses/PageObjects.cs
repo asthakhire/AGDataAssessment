@@ -6,12 +6,12 @@ namespace UITestAssignment.PageClasses
 {
     public class PageObjects
     {
-        #region HomePage
-        public PageClasses.HomePage agdata_home_page { get { return new HomePage(); } }
-        #endregion
+        //#region HomePage
+        //public PageClasses.HomePage agdata_home_page { get { return new HomePage(); } }
+        //#endregion
 
-        #region Company
-        public PageClasses.CareersPage agdata_careers_page { get { return new CareersPage(); } }
-        #endregion
+        //#region Company
+        //public PageClasses.CareersPage agdata_careers_page { get { return new CareersPage(); } }
+        //#endregion
     }
 }

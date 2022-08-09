@@ -1,0 +1,8 @@
+{
+  "Environments": [
+    {
+      "Environment": "Test",
+      "AdminCheckOutURL": "https://www.agdata.com/",
+    }
+  ]
+}

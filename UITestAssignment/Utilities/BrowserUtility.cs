@@ -6,9 +6,9 @@ using System.IO;
 using System.Reflection;
 using System.Text;
 
-namespace UITestAssignment.Selenium
+namespace UITestAssignment.Utilities
 {
-    public class SeleniumEngine
+    public class BrowserUtility
     {
         public IWebDriver Start(string browser, string launchMode = "Normal")
         {
@@ -28,11 +28,10 @@ namespace UITestAssignment.Selenium
                                 break;
                             case "Headless":
                                 chromeOptions.AddArgument("--headless");
+                                chromeOptions.AddArgument("--window-size=1400,800");
                                 break;
                         }
                         webDriver = new ChromeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), chromeOptions);
-                        break;
-                    case "edge":
                         break;
                 }
                 if (webDriver != null)
@@ -48,5 +47,6 @@ namespace UITestAssignment.Selenium
                 throw ex;
             }
         }
+
     }
 }
