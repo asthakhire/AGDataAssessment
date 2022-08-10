@@ -1,4 +1,5 @@
 ﻿using APITestAssignment.Configurations;
+using APITestAssignment.Helpers;
 using System;
 using System.Net.Http;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace APITestAssignment
 
         public BaseService()
         {
-            this.TestUri = TestConfig.TestUri;
+            this.TestUri = ResourceInitialize.AppUrl;
             _httpClient = new System.Net.Http.HttpClient();
         }
         public async Task<HttpResponseMessage> Post(string requestUrl, HttpContent content)

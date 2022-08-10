@@ -1,12 +1,15 @@
-﻿using APITestAssignment.Helper;
+﻿using APITestAssignment.Configurations;
+using APITestAssignment.Helper;
 using APITestAssignment.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static APITestAssignment.Helper.Post;
 
 namespace APITestAssignment.APIScripts
 {
@@ -139,6 +142,35 @@ namespace APITestAssignment.APIScripts
             catch (Exception e)
             {
                 ReportError(e);
+            }
+        }
+
+        [TestMethod]
+        [TestProperty("Id", "101")]
+        [TestProperty("Title", "AGdata test API")]
+        [DataTestMethod]
+        [DynamicData(nameof(GetDataForPost), DynamicDataSourceType.Method)]
+        public async Task VerifySavePostUsingTDD(Post post)
+        {
+            PostServices postSvc = new PostServices();
+            try
+            {
+                report.StartTest("AGData", "VerifySavePost");
+                report.LogInfo("Create a new Post");
+                var resultSave = await postSvc.SavePost(post, HttpStatusCode.Created);
+            }
+            catch (Exception e)
+            {
+                ReportError(e);
+            }
+        }
+
+        private static IEnumerable<object[]> GetDataForPost()
+        {
+            var postList = TestConfig.GetObjectData<PostsList>(Directory.GetCurrentDirectory() + "\\Data\\PostData.json");
+            foreach (var post in postList.Posts)
+            {
+                yield return new[] { post };
             }
         }
     }

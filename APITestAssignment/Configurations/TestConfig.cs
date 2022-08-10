@@ -12,9 +12,7 @@ namespace APITestAssignment.Configurations
 
         static TestConfig()
         {
-            //TestUri = GetObjectData<string>(@"C:\Users\akhire\Source\Repos\AGDataAssessment\APITestAssignment\Configurations\TestConfig.json");
             TestUri = "https://jsonplaceholder.typicode.com";
-
         }
 
         public static T GetObjectData<T>(string path)

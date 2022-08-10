@@ -1,4 +1,5 @@
 ﻿using APITestAssignment.Configurations;
+using APITestAssignment.Helpers;
 using APITestAssignment.Reporting;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
@@ -18,6 +19,7 @@ namespace APITestAssignment.APIScripts
         [AssemblyInitialize]
         public static void AssemblySetup(TestContext _context)
         {
+            ResourceInitialize.Initialize(_context);
             report = new HtmlReport(Directory.GetCurrentDirectory());
         }
 
@@ -25,7 +27,7 @@ namespace APITestAssignment.APIScripts
         public void TestSetUp()
         {
             report.StartReport();
-            TestUri = "https://jsonplaceholder.typicode.com";
+            TestUri = ResourceInitialize.AppUrl;
         }
 
         [TestCleanup]

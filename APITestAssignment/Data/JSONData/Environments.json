@@ -1,0 +1,8 @@
+{
+  "Environments": [
+    {
+      "Environment": "Test",
+      "AdminCheckOutURL": "https://jsonplaceholder.typicode.com"
+    }
+  ]
+}
